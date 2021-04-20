@@ -26,6 +26,11 @@ section{
             "[A]llows an author to indicate that an element and
             its contents are, as much as possible, independent of the rest
             of the document tree."
+
+        This is what assigns the 'parent' container. 
+
+        `inline-size` indicates that the child styling should update as the
+        parent's width changes
     */
     contain: layout inline-size;
 
@@ -39,15 +44,40 @@ section{
 }
 
 .placeholder{
-    min-height: 25px;
-    min-width: 25px;
     border: solid thin white;
+    padding: 10px;
+    margin: 10px;
 }
 
 @container(min-width: 400px){ /* This is the container query */
     .c-article{
-        /* display: flex; */
-        /* flex-wrap: wrap; */
+        display: flex;
+        flex-wrap: wrap;
         background-color: lightblue;
+    }
+
+    .placeholder{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: lightgray;
+    }
+}
+
+@container(max-width: 399px){
+    .c-article{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: none;
+    }
+
+    .placeholder{
+        border: none;
+        flex-grow: 1;
+        background-color: lightgrey;
+        margin: 0;
+        width: 100%;
     }
 }
