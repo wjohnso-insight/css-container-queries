@@ -21,12 +21,18 @@ section{
 
 .o-grid_item{
     background-color: lightgreen;
+    /**
+        `contain`(https://developer.mozilla.org/en-US/docs/Web/CSS/contain)
+            "[A]llows an author to indicate that an element and
+            its contents are, as much as possible, independent of the rest
+            of the document tree."
+    */
     contain: layout inline-size;
+
     margin: 10px;
 }
 
 .c-article{
-    /* background-color: lightblue; */
     border: solid thin white;
     margin: 10px;
     min-height: 100px;
